@@ -31,3 +31,37 @@ Run the command npx sb init --builder @storybook/builder-vite --use-npm, to conf
 prettier was not formatting my application, after a little google search I came across this guide:
 https://stackoverflow.com/questions/71184604/prettier-fails-when-declaring-type-module-in-package-json
 and after reading the docs https://prettier.io/docs/en/configuration.html I changed my .prettierrc file extension from .js to json and it worked !
+
+## Tailwind notes
+
+Tailwind needs to have its imported css files (import './styles/global.css') on both the App.tsx and preview.cjs
+This happens is so that storybook has access to the styles provided by tailwind
+
+## Packages used
+
+ClSX
+https://www.npmjs.com/package/clsx
+Creates classes variations, helps create conditional classes inside a component
+
+Radix-ui/React-slot
+https://www.radix-ui.com/docs/primitives/utilities/slot
+When you use a slot, you send all the props that are inside the slot to the first components who comes inside the children.º
+
+```js
+export interface ExampleProps {
+    children: ReactNode;
+	asChild?: boolean;
+}
+
+export const Example: React.FC<ExampleProps> = ({ children, asChild }) => {
+	const ComponentType = asChild ? Slot : 'span';
+
+	return (
+		<ComponentType className={'text-gray-100 font-sans'}>
+			{children}
+		</ComponentType>
+	);
+};
+```
+
+If we call `<Example asChild={true} children={<h3>Test</h3>}/>` now the component will act as an `<h3>` tag but still inherit the fathers props and styles.
