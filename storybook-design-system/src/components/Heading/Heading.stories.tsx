@@ -50,10 +50,6 @@ export const CustomComponent: StoryObj<HeadingProps> = {
 		children: <h1>Lorem Ipsum with p tag with H1 tag</h1>,
 	},
 	argTypes: {
-		children: {
-			table: {
-				disable: true,
-			},
-		},
+		children: { table: { disable: true } },
 	},
 };

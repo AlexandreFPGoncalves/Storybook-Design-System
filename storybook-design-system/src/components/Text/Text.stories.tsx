@@ -4,49 +4,31 @@ import { Text, TextProps } from './Text';
 export default {
 	title: 'Components/Text',
 	component: Text,
-	args: {
-		children: 'Lorem Ipsum',
-	},
+	args: { children: 'Lorem Ipsum' },
 	argTypes: {
 		size: {
 			options: ['sm', 'md', 'lg'],
-			control: {
-				type: 'inline-radio',
-			},
+			control: { type: 'inline-radio' },
 		},
 	},
 } as Meta<TextProps>;
 
 export const Small: StoryObj<TextProps> = {
-	args: {
-		size: 'sm',
-	},
+	args: { size: 'sm' },
 };
+
 export const Medium: StoryObj<TextProps> = {
-	args: {
-		size: 'md',
-	},
+	args: { size: 'md' },
 };
+
 export const Large: StoryObj<TextProps> = {
-	args: {
-		size: 'lg',
-	},
+	args: { size: 'lg' },
 };
+
 export const CustomComponent: StoryObj<TextProps> = {
-	args: {
-		asChild: true,
-		children: <p>Lorem Ipsum with p tag</p>,
-	},
+	args: { asChild: true, children: <p>Lorem Ipsum with p tag</p> },
 	argTypes: {
-		children: {
-			table: {
-				disable: true,
-			},
-		},
-		asChild: {
-			table: {
-				disable: true,
-			},
-		},
+		children: { table: { disable: true } },
+		asChild: { table: { disable: true } },
 	},
 };

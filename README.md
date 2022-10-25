@@ -47,6 +47,13 @@ Radix-ui/React-slot
 https://www.radix-ui.com/docs/primitives/utilities/slot
 When you use a slot, you send all the props that are inside the slot to the first components who comes inside the children.º
 
+phosphor-react
+https://www.npmjs.com/package/phosphor-react
+Various icons made for react projects
+
+Radix-ui/Radix-Checkbox
+https://www.radix-ui.com/docs/primitives/components/checkbox
+Checkbox from Radix, no styles works as a default checkbox
 ```js
 export interface ExampleProps {
     children: ReactNode;
