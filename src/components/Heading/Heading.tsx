@@ -7,9 +7,10 @@ export interface HeadingProps {
 	size?: 'sm' | 'md' | 'lg';
 	bold?: boolean;
 	asChild?: boolean;
+	className?: string;
 }
 
-export const Heading: React.FC<HeadingProps> = ({ children, size = 'md', bold = true, asChild }) => {
+export const Heading: React.FC<HeadingProps> = ({ children, size = 'md', bold = true, asChild, className }) => {
 	const ComponentType = asChild ? Slot : 'h2';
 
 	return (
@@ -23,7 +24,8 @@ export const Heading: React.FC<HeadingProps> = ({ children, size = 'md', bold = 
 				},
 				{
 					'font-bold': bold,
-				}
+				},
+				className
 			)}
 		>
 			{children}

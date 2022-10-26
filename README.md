@@ -59,20 +59,20 @@ Checkbox from Radix, no styles works as a default checkbox
 Storybook deployer
 https://www.npmjs.com/package/@storybook/storybook-deployer
 
+Storybook a11y Addon
+https://storybook.js.org/addons/@storybook/addon-a11y
+This Storybook addon can be helpful to make your UI components more accessible.
+
 ```js
 export interface ExampleProps {
-    children: ReactNode;
+	children: ReactNode;
 	asChild?: boolean;
 }
 
 export const Example: React.FC<ExampleProps> = ({ children, asChild }) => {
 	const ComponentType = asChild ? Slot : 'span';
 
-	return (
-		<ComponentType className={'text-gray-100 font-sans'}>
-			{children}
-		</ComponentType>
-	);
+	return <ComponentType className={'text-gray-100 font-sans'}>{children}</ComponentType>;
 };
 ```
 
